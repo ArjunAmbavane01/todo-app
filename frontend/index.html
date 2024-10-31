@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APPLICATION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="w-full h-20 flex justify-between p-2">
+      <div class="flex items-center ml-8 text-2xl">TODO APP</div>
+      <div class="flex justify-end">
+        <div id="information">
+        </div>
+        <div
+          class="block p-2 mx-3 my-3 flex items-center rounded-sm cursor-pointer hidden"
+          id="logout"
+          onclick="logout()"
+        >
+          Logout
+        </div>
+        <div
+          class="block p-2 mx-3 my-3 flex items-center rounded-sm cursor-pointer"
+          id="signup"
+          onclick="toggleSignupForm()"
+        >
+          Sign Up
+        </div>
+        
+        <div class="signupForm hidden" id="signupForm">
+            <div class="form-title">Signup Form</div>
+          <label for="email" class="block mb-2">Email:</label>
+          <input class="mb-4 p-2 w-full border rounded" type="text" name="signupEmail" id="signupEmail" placeholder="email" required/>
+          
+          <label for="password" class="block mb-2">Password:</label>
+          <input class="mb-4 p-2 w-full border rounded" type="password" name="signupPassword" id="signupPassword" placeholder="password" required/>
+          
+          <button onclick="userSignup()" class="w-full p-2 bg-blue-500 text-white rounded mt-4">
+            Submit
+          </button>
+        </div>
+
+        <div
+          class="block p-2 mx-3 my-3 flex items-center rounded-sm cursor-pointer"
+          id="signin"
+          onclick="toggleSigninForm()"
+        >
+          Sign In
+        </div>
+
+        <div class="signinForm hidden" id="signinForm">
+            <div class="form-title">Signin Form</div>
+            <label for="email" class="block mb-2">Email:</label>
+            <input class="mb-4 p-2 w-full border rounded" type="text" name="signinEmail" id="signinEmail" placeholder="email" required/>
+            
+            <label for="password" class="block mb-2">Password:</label>
+            <input class="mb-4 p-2 w-full border rounded" type="password" name="signinPassword" id="signinPassword" placeholder="password" required/>
+            
+            <button onclick="userSignin()" class="w-full p-2 bg-blue-500 text-white rounded mt-4">
+              Submit
+            </button>
+          </div>
+      </div>
+    </header>
+
+    <div class="add-todo">
+        <input class="inline" type="text" name="todoTitle" id="todoTitle" placeholder="Title" required/>
+        <input class="inline" type="text" name="todoDescription" id="todoDescription" placeholder="Description" required/>
+        <div class="inline cursor-pointer" id="submitTodo" onclick="addTodo()">Add Todo</div>
+    </div>
+
+    <div class="todoMessage hidden">
+      <h1>No Work Left! Have a Good Day</h1>
+    </div>
+    <div id="todos-container">
+        
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
