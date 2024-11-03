@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 async function connect(){
     try{
-        await mongoose.connect('mongodb+srv://arjunambavane:PBjZaH7wc94qMv2s@cluster0.6iatp.mongodb.net/todo-app')
+        await mongoose.connect('')
         console.log('Connected to mongoDB')
     } catch(e){
         console.log('Connection To MongoDB Failed');
